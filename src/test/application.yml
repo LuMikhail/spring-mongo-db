@@ -1,0 +1,32 @@
+spring:
+  data:
+    mongodb:
+      port: 0
+      database: test
+      #host: localhost
+      #port: 27017
+
+de:
+  flapdoodle:
+    mongodb:
+      embedded:
+        version: 4.0.2
+
+mongock:
+  runner-type: "ApplicationRunner" # default
+  #runner-type: "InitializingBean"
+  change-logs-scan-package:
+    - homework8.mongock.changelogs
+
+  mongo-db:
+    write-concern:
+      journal: false
+    read-concern: local
+
+  shell:
+    interactive:
+      enabled: false
+
+logging:
+  level:
+    root: ERROR
